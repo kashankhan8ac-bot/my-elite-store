@@ -1,73 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Premium Store | Official</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        :root { --gold: #d4af37; --black: #111; }
-        .navbar { background: var(--black); padding: 15px; text-align: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
-        .navbar a { color: var(--gold); margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 13px; letter-spacing: 1px; }
-        .badge { background: red; color: white; padding: 2px 8px; border-radius: 5px; font-size: 10px; position: absolute; top: 10px; left: 10px; }
-        .reviews { background: #1a1a1a; padding: 50px 20px; text-align: center; color: white; }
-        .review-card { border: 1px solid #333; padding: 20px; margin: 10px; display: inline-block; width: 250px; border-radius: 10px; }
-        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10000; }
-    </style>
-</head>
-<body>
+            // Ye asli products hain jo aapke store ko bhara hua dikhayenge
+            const products = [
+                {name: "Ultra Smart Watch Z7", price: "4,500", img: "https://images.unsplash.com/photo-1546868891-d5b02b903115?w=500"},
+                {name: "Pro Wireless Headphones", price: "3,200", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"},
+                {name: "Air Jordan Sneakers", price: "6,500", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
+                {name: "DSLR Professional Camera", price: "85,000", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500"},
+                {name: "Premium iPhone Case", price: "1,200", img: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500"}
+            ];
 
-    <nav class="navbar">
-        <a href="#">HOME</a>
-        <a href="#products">SHOP</a>
-        <a href="#reviews">REVIEWS</a>
-        <a href="https://wa.me/923109543841">SUPPORT</a>
-    </nav>
-
-    <header style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000'); background-size: cover; padding: 100px 20px;">
-        <h1 style="color: var(--gold); font-size: 3rem;">ELITE PREMIUM STORE</h1>
-        <p style="color: white;">Pakistan's Most Trusted Luxury Marketplace</p>
-    </header>
-
-    <section id="products" class="container">
-        <script>
-            // Is loop se 50 products banenge
+            // Baki 45 products placeholder rahenge
             for (let i = 1; i <= 50; i++) {
-                let price = Math.floor(Math.random() * (5000 - 1000) + 1000);
+                let pName = products[i-1] ? products[i-1].name : "Luxury Premium Item " + i;
+                let pPrice = products[i-1] ? products[i-1].price : (Math.floor(Math.random() * 5000) + 1000).toLocaleString();
+                let pImg = products[i-1] ? products[i-1].img : "https://via.placeholder.com/400?text=Elite+Product+" + i;
+
                 document.write(`
                     <div class="product-card" style="position:relative;">
-                        <span class="badge">BEST SELLER</span>
-                        <img src="https://via.placeholder.com/400?text=Premium+Item+${i}" alt="Product">
-                        <h3>Elite Luxury Item #${i}</h3>
-                        <p class="price">Rs. ${price.toLocaleString()}</p>
-                        <button onclick="orderNow('Item #${i}', '${price}')">Order Now</button>
+                        <span class="badge">HOT SALE</span>
+                        <img src="${pImg}" alt="${pName}">
+                        <h3>${pName}</h3>
+                        <p class="price">Rs. ${pPrice}</p>
+                        <button onclick="orderNow('${pName}', '${pPrice}')">Order via WhatsApp</button>
                     </div>
                 `);
             }
-        </script>
-    </section>
-
-    <section id="reviews" class="reviews">
-        <h2>What Our Customers Say</h2>
-        <div class="review-card">
-            <p>"Best quality products in Pakistan!"</p>
-            <h4 style="color: var(--gold);">- Ahmed Khan</h4>
-        </div>
-        <div class="review-card">
-            <p>"Delivery was very fast, 10/10."</p>
-            <h4 style="color: var(--gold);">- Sara Malik</h4>
-        </div>
-    </section>
-
-    <a href="https://wa.me/923109543841" class="wa-float">Chat With Us</a>
-
-    <script>
-        function orderNow(name, price) {
-            let phone = "923109543841";
-            let msg = "Hi Elite Store! I want to order " + name + " for Rs. " + price + ". Please guide me.";
-            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
-        }
-    </script>
-
-</body>
-</html>
