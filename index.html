@@ -5,57 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Premium Store | Online Shopping</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navbar aur Dashboard jaisa look dene ke liye extra design */
+        .navbar { background: #000; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #d4af37; }
+        .navbar a { color: #d4af37; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 14px; }
+        .search-bar { margin: 20px; text-align: center; }
+        .search-bar input { padding: 10px; width: 80%; border-radius: 5px; border: 1px solid #d4af37; background: #1a1a1a; color: white; }
+    </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <a href="#">HOME</a>
+        <a href="#products">PRODUCTS</a>
+        <a href="https://wa.me/923109543841">CONTACT</a>
+    </nav>
+
     <header>
         <div class="logo">ELITE STORE</div>
-        <p>Premium Products at Unbeatable Prices</p>
+        <p>Your Professional Marketplace</p>
     </header>
 
-    <section class="banner">
-        <h2>Summer Sale - 50% OFF</h2>
-        <p>Aapka pasandida saman, ab aapki pohanch mein!</p>
-    </section>
-
-    <div class="container">
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Watch">
-            <h3>Luxury Watch</h3>
-            <p class="price">Rs. 2,999</p>
-            <button onclick="orderNow('Luxury Watch', '2,999')">Order on WhatsApp</button>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones">
-            <h3>Elite Headphones</h3>
-            <p class="price">Rs. 4,500</p>
-            <button onclick="orderNow('Elite Headphones', '4,500')">Order on WhatsApp</button>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Shoes">
-            <h3>Sport Shoes</h3>
-            <p class="price">Rs. 3,200</p>
-            <button onclick="orderNow('Sport Shoes', '3,200')">Order on WhatsApp</button>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1526170315870-ef68460d2876?w=400" alt="Camera">
-            <h3>Digital Camera</h3>
-            <p class="price">Rs. 15,000</p>
-            <button onclick="orderNow('Digital Camera', '15,000')">Order on WhatsApp</button>
-        </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search products...">
     </div>
+
+    <section id="products" class="container">
+        <script>
+            // Ye script khud hi 25 products bana degi
+            const products = [
+                {name: "Luxury Watch", price: "2,999", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"},
+                {name: "Elite Headphones", price: "4,500", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"},
+                {name: "Sport Shoes", price: "3,200", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"},
+                {name: "Digital Camera", price: "15,000", img: "https://images.unsplash.com/photo-1526170315870-ef68460d2876?w=400"},
+                {name: "Smart Phone", price: "45,000", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400"},
+                // Isi tarah main ne 25 ka structure set kiya hai
+            ];
+
+            // 25 products generate karne ka loop
+            for (let i = 1; i <= 25; i++) {
+                let pName = products[i-1] ? products[i-1].name : "Premium Product " + i;
+                let pPrice = products[i-1] ? products[i-1].price : "5,000";
+                let pImg = products[i-1] ? products[i-1].img : "https://via.placeholder.com/400?text=Product+" + i;
+
+                document.write(`
+                    <div class="product-card">
+                        <img src="${pImg}" alt="${pName}">
+                        <h3>${pName}</h3>
+                        <p class="price">Rs. ${pPrice}</p>
+                        <button onclick="orderNow('${pName}', '${pPrice}')">Order on WhatsApp</button>
+                    </div>
+                `);
+            }
+        </script>
+    </section>
 
     <footer>
         <p>&copy; 2026 Elite Premium Store - All Rights Reserved</p>
     </footer>
-    <scrip>
-        <script>
-    function orderNow(name, price) {
-        let phone = "923109543841"; 
-        let msg = "Hi! I want to buy " + name + " for Rs. " + price;
-        window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
-    }
-        </script>
-        
+
+    <script>
+        function orderNow(name, price) {
+            let phone = "923109543841"; // Aapka number
+            let msg = "Hi! I want to buy " + name + " for Rs. " + price + ". Is it available?";
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
+        }
+    </script>
+</body>
+</html>
