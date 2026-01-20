@@ -1,4 +1,42 @@
-            // Ye asli products hain jo aapke store ko bhara hua dikhayenge
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Premium Store | Official</title>
+    <style>
+        :root { --gold: #d4af37; --black: #111; }
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        .navbar { background: var(--black); padding: 15px; text-align: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+        .navbar a { color: var(--gold); margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 13px; letter-spacing: 1px; }
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000'); background-size: cover; padding: 60px 20px; text-align: center; color: white; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .product-card { background: white; border: 1px solid #ddd; margin: 10px; padding: 15px; width: 250px; text-align: center; border-radius: 8px; position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .product-card img { max-width: 100%; border-radius: 5px; height: 200px; object-fit: cover; }
+        .badge { background: red; color: white; padding: 2px 8px; border-radius: 5px; font-size: 10px; position: absolute; top: 10px; left: 10px; }
+        .price { color: #27ae60; font-weight: bold; font-size: 1.2rem; }
+        button { background: #25d366; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+        .reviews { background: #1a1a1a; padding: 40px 20px; text-align: center; color: white; }
+        .review-card { border: 1px solid #333; padding: 20px; margin: 10px; display: inline-block; width: 250px; border-radius: 10px; }
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10000; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#">HOME</a>
+        <a href="#products">SHOP</a>
+        <a href="#reviews">REVIEWS</a>
+        <a href="https://wa.me/923109543841">SUPPORT</a>
+    </nav>
+
+    <header>
+        <h1 style="color: var(--gold);">ELITE PREMIUM STORE</h1>
+        <p>Pakistan's Most Trusted Luxury Marketplace</p>
+    </header>
+
+    <section id="products" class="container">
+        <script>
             const products = [
                 {name: "Ultra Smart Watch Z7", price: "4,500", img: "https://images.unsplash.com/photo-1546868891-d5b02b903115?w=500"},
                 {name: "Pro Wireless Headphones", price: "3,200", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"},
@@ -7,14 +45,13 @@
                 {name: "Premium iPhone Case", price: "1,200", img: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500"}
             ];
 
-            // Baki 45 products placeholder rahenge
             for (let i = 1; i <= 50; i++) {
                 let pName = products[i-1] ? products[i-1].name : "Luxury Premium Item " + i;
                 let pPrice = products[i-1] ? products[i-1].price : (Math.floor(Math.random() * 5000) + 1000).toLocaleString();
                 let pImg = products[i-1] ? products[i-1].img : "https://via.placeholder.com/400?text=Elite+Product+" + i;
 
                 document.write(`
-                    <div class="product-card" style="position:relative;">
+                    <div class="product-card">
                         <span class="badge">HOT SALE</span>
                         <img src="${pImg}" alt="${pName}">
                         <h3>${pName}</h3>
@@ -23,3 +60,30 @@
                     </div>
                 `);
             }
+        </script>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review-card">
+            <p>"Best quality products in Pakistan!"</p>
+            <h4 style="color: var(--gold);">- Ahmed Khan</h4>
+        </div>
+        <div class="review-card">
+            <p>"Delivery was very fast, 10/10."</p>
+            <h4 style="color: var(--gold);">- Sara Malik</h4>
+        </div>
+    </section>
+
+    <a href="https://wa.me/923109543841" class="wa-float">Chat With Us</a>
+
+    <script>
+        function orderNow(name, price) {
+            let phone = "923109543841";
+            let msg = "Hi Elite Store! I want to order " + name + " for Rs. " + price + ". Please guide me.";
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
+        }
+    </script>
+
+</body>
+</html>
