@@ -3,37 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Online Store</title>
+    <title>Kashan Premium Store | Official</title>
     <style>
-        :root { --gold: #d4af37; --black: #111; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f9f9f9; }
+        :root { --gold: #d4af37; --black: #111; --green: #25d366; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f4; color: #333; }
+        
+        /* Free Delivery Strip */
+        .top-bar { background: var(--gold); color: black; text-align: center; padding: 8px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+        
         .navbar { background: var(--black); padding: 15px; text-align: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
-        .navbar a { color: var(--gold); margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; }
-        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000'); background-size: cover; padding: 80px 20px; text-align: center; color: white; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; gap: 20px; }
-        .product-card { background: white; border-radius: 12px; overflow: hidden; width: 260px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; position: relative; border: 1px solid #eee; }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-card img { width: 100%; height: 220px; object-fit: cover; }
-        .badge { background: #e74c3c; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; position: absolute; top: 10px; left: 10px; font-weight: bold; }
-        .p-info { padding: 15px; }
-        .p-name { font-size: 18px; font-weight: 600; color: #333; margin: 10px 0; }
-        .price { color: #27ae60; font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; }
-        button { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .reviews { background: #111; padding: 50px 20px; text-align: center; color: white; }
-        .wa-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; gap: 10px; }
+        .navbar a { color: var(--gold); margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 13px; }
+
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000'); background-size: cover; padding: 70px 20px; text-align: center; color: white; }
+        
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 30px 10px; gap: 20px; }
+        
+        /* Product Card Upgrade */
+        .product-card { background: white; border-radius: 15px; overflow: hidden; width: 280px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; position: relative; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .product-card img { width: 100%; height: 250px; object-fit: cover; }
+        .badge { background: #ff3e3e; color: white; padding: 5px 12px; border-radius: 5px; font-size: 11px; position: absolute; top: 15px; left: 15px; font-weight: bold; }
+        
+        .p-info { padding: 20px; }
+        .p-name { font-size: 19px; font-weight: 700; color: #222; margin-bottom: 8px; }
+        .price { color: #27ae60; font-weight: bold; font-size: 1.4rem; margin-bottom: 15px; }
+        
+        button { background: var(--green); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px; transition: 0.2s; }
+        button:hover { background: #1ebd54; }
+
+        /* About Us Section */
+        .about-section { background: white; padding: 60px 20px; text-align: center; border-top: 1px solid #ddd; }
+        .about-container { max-width: 800px; margin: 0 auto; }
+        .about-section h2 { color: var(--black); font-size: 2rem; margin-bottom: 20px; }
+        .about-section p { line-height: 1.8; color: #666; font-size: 1.1rem; }
+
+        .wa-float { position: fixed; bottom: 25px; right: 25px; background: var(--green); color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 10000; }
     </style>
 </head>
 <body>
 
+    <div class="top-bar">🚚 FREE DELIVERY ALL OVER PAKISTAN ON ORDERS ABOVE RS. 5,000!</div>
+
     <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#products">New Arrivals</a>
-        <a href="https://wa.me/923109543841">Contact Us</a>
+        <a href="#">HOME</a>
+        <a href="#products">PRODUCTS</a>
+        <a href="#about">ABOUT US</a>
+        <a href="https://wa.me/923109543841">CONTACT</a>
     </nav>
 
     <header>
-        <h1 style="color: var(--gold); font-size: 2.5rem; margin: 0;">KASHAN PREMIUM STORE</h1>
-        <p style="font-size: 1.1rem; opacity: 0.9;">Quality Products Delivered to Your Doorstep</p>
+        <h1 style="color: var(--gold); font-size: 3rem; margin-bottom: 10px;">KASHAN PREMIUM STORE</h1>
+        <p style="font-size: 1.2rem; letter-spacing: 1px;">Luxury Shopping Experience At Your Fingertips</p>
     </header>
 
     <section id="products" class="container">
@@ -54,7 +74,7 @@
                 {n: "Stylish Sun Glasses", p: "1,500", i: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"},
                 {n: "Laptop Backpack", p: "2,800", i: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
                 {n: "Power Bank 20000mAh", p: "4,200", i: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500"},
-                {n: "Minimalist Table Lamp", p: "3,100", i: "https://images.unsplash.com/photo-1507473884658-c4a3fc3462fb?w=500"},
+                {n: "Minimalist Table Lamp", p: "3,100", i: "https://images.unsplash.com/photo-1507473884658-c4a3942d3acf?w=500"},
                 {n: "Electric Kettle", p: "2,900", i: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500"},
                 {n: "Casual Loafers Shoes", p: "3,500", i: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=500"},
                 {n: "Memory Foam Pillow", p: "1,900", i: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500"},
@@ -64,7 +84,7 @@
             products.forEach(item => {
                 document.write(`
                     <div class="product-card">
-                        <span class="badge">SALE</span>
+                        <span class="badge">LIMITED OFFER</span>
                         <img src="${item.i}" alt="${item.n}">
                         <div class="p-info">
                             <div class="p-name">${item.n}</div>
@@ -77,12 +97,19 @@
         </script>
     </section>
 
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>About Our Store</h2>
+            <p>Welcome to <strong>Kashan Premium Store</strong>. We are committed to providing our customers with high-quality products ranging from electronics to fashion accessories. Our mission is to offer premium luxury items at the most affordable prices in Pakistan. With our fast delivery and reliable customer support, shopping has never been easier.</p>
+        </div>
+    </section>
+
     <a href="https://wa.me/923109543841" class="wa-float">💬 Chat With Us</a>
 
     <script>
         function orderNow(name, price) {
             let phone = "923109543841";
-            let msg = "Hi! I want to order " + name + " for Rs. " + price + ". Is it available?";
+            let msg = "Hi Kashan Store! I am interested in ordering: " + name + " (Rs. " + price + "). Is it available?";
             window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
         }
     </script>
