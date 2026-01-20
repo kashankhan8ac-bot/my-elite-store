@@ -3,84 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Premium Store | Official</title>
+    <title>Premium Online Store</title>
     <style>
         :root { --gold: #d4af37; --black: #111; }
-        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f9f9f9; }
         .navbar { background: var(--black); padding: 15px; text-align: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
-        .navbar a { color: var(--gold); margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 13px; letter-spacing: 1px; }
-        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000'); background-size: cover; padding: 60px 20px; text-align: center; color: white; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-        .product-card { background: white; border: 1px solid #ddd; margin: 10px; padding: 15px; width: 250px; text-align: center; border-radius: 8px; position: relative; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .product-card img { max-width: 100%; border-radius: 5px; height: 200px; object-fit: cover; }
-        .badge { background: red; color: white; padding: 2px 8px; border-radius: 5px; font-size: 10px; position: absolute; top: 10px; left: 10px; }
-        .price { color: #27ae60; font-weight: bold; font-size: 1.2rem; }
-        button { background: #25d366; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
-        .reviews { background: #1a1a1a; padding: 40px 20px; text-align: center; color: white; }
-        .review-card { border: 1px solid #333; padding: 20px; margin: 10px; display: inline-block; width: 250px; border-radius: 10px; }
-        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10000; }
+        .navbar a { color: var(--gold); margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; }
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000'); background-size: cover; padding: 80px 20px; text-align: center; color: white; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; gap: 20px; }
+        .product-card { background: white; border-radius: 12px; overflow: hidden; width: 260px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; position: relative; border: 1px solid #eee; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-card img { width: 100%; height: 220px; object-fit: cover; }
+        .badge { background: #e74c3c; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; position: absolute; top: 10px; left: 10px; font-weight: bold; }
+        .p-info { padding: 15px; }
+        .p-name { font-size: 18px; font-weight: 600; color: #333; margin: 10px 0; }
+        .price { color: #27ae60; font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; }
+        button { background: #25d366; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .reviews { background: #111; padding: 50px 20px; text-align: center; color: white; }
+        .wa-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; gap: 10px; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="#">HOME</a>
-        <a href="#products">SHOP</a>
-        <a href="#reviews">REVIEWS</a>
-        <a href="https://wa.me/923109543841">SUPPORT</a>
+        <a href="#">Home</a>
+        <a href="#products">New Arrivals</a>
+        <a href="https://wa.me/923109543841">Contact Us</a>
     </nav>
 
     <header>
-        <h1 style="color: var(--gold);">ELITE PREMIUM STORE</h1>
-        <p>Pakistan's Most Trusted Luxury Marketplace</p>
+        <h1 style="color: var(--gold); font-size: 2.5rem; margin: 0;">KASHAN PREMIUM STORE</h1>
+        <p style="font-size: 1.1rem; opacity: 0.9;">Quality Products Delivered to Your Doorstep</p>
     </header>
 
     <section id="products" class="container">
         <script>
             const products = [
-                {name: "Ultra Smart Watch Z7", price: "4,500", img: "https://images.unsplash.com/photo-1546868891-d5b02b903115?w=500"},
-                {name: "Pro Wireless Headphones", price: "3,200", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"},
-                {name: "Air Jordan Sneakers", price: "6,500", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
-                {name: "DSLR Professional Camera", price: "85,000", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500"},
-                {name: "Premium iPhone Case", price: "1,200", img: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500"}
+                {n: "Ultra Smart Watch Z7", p: "4,500", i: "https://images.unsplash.com/photo-1546868891-d5b02b903115?w=500"},
+                {n: "Pro Wireless Headphones", p: "3,200", i: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"},
+                {n: "Air Jordan Sneakers", p: "6,500", i: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
+                {n: "Professional DSLR", p: "85,000", i: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500"},
+                {n: "Luxury Men's Perfume", p: "3,800", i: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"},
+                {n: "Gaming Mouse RGB", p: "1,800", i: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500"},
+                {n: "Bluetooth Speaker", p: "2,500", i: "https://images.unsplash.com/photo-1608351489262-856be29e9c60?w=500"},
+                {n: "Leather Wallet Mens", p: "1,200", i: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500"},
+                {n: "Smart Android Phone", p: "45,000", i: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"},
+                {n: "Cotton Summer T-Shirt", p: "950", i: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"},
+                {n: "Classic Wrist Watch", p: "5,500", i: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500"},
+                {n: "Wireless Gaming Pad", p: "3,400", i: "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=500"},
+                {n: "Stylish Sun Glasses", p: "1,500", i: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"},
+                {n: "Laptop Backpack", p: "2,800", i: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+                {n: "Power Bank 20000mAh", p: "4,200", i: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500"},
+                {n: "Minimalist Table Lamp", p: "3,100", i: "https://images.unsplash.com/photo-1507473884658-c4a3fc3462fb?w=500"},
+                {n: "Electric Kettle", p: "2,900", i: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500"},
+                {n: "Casual Loafers Shoes", p: "3,500", i: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=500"},
+                {n: "Memory Foam Pillow", p: "1,900", i: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500"},
+                {n: "Gym Water Bottle", p: "800", i: "https://images.unsplash.com/photo-1602143328225-306440236a94?w=500"}
             ];
 
-            for (let i = 1; i <= 50; i++) {
-                let pName = products[i-1] ? products[i-1].name : "Luxury Premium Item " + i;
-                let pPrice = products[i-1] ? products[i-1].price : (Math.floor(Math.random() * 5000) + 1000).toLocaleString();
-                let pImg = products[i-1] ? products[i-1].img : "https://via.placeholder.com/400?text=Elite+Product+" + i;
-
+            products.forEach(item => {
                 document.write(`
                     <div class="product-card">
-                        <span class="badge">HOT SALE</span>
-                        <img src="${pImg}" alt="${pName}">
-                        <h3>${pName}</h3>
-                        <p class="price">Rs. ${pPrice}</p>
-                        <button onclick="orderNow('${pName}', '${pPrice}')">Order via WhatsApp</button>
+                        <span class="badge">SALE</span>
+                        <img src="${item.i}" alt="${item.n}">
+                        <div class="p-info">
+                            <div class="p-name">${item.n}</div>
+                            <div class="price">Rs. ${item.p}</div>
+                            <button onclick="orderNow('${item.n}', '${item.p}')">Order on WhatsApp</button>
+                        </div>
                     </div>
                 `);
-            }
+            });
         </script>
     </section>
 
-    <section id="reviews" class="reviews">
-        <h2>What Our Customers Say</h2>
-        <div class="review-card">
-            <p>"Best quality products in Pakistan!"</p>
-            <h4 style="color: var(--gold);">- Ahmed Khan</h4>
-        </div>
-        <div class="review-card">
-            <p>"Delivery was very fast, 10/10."</p>
-            <h4 style="color: var(--gold);">- Sara Malik</h4>
-        </div>
-    </section>
-
-    <a href="https://wa.me/923109543841" class="wa-float">Chat With Us</a>
+    <a href="https://wa.me/923109543841" class="wa-float">💬 Chat With Us</a>
 
     <script>
         function orderNow(name, price) {
             let phone = "923109543841";
-            let msg = "Hi Elite Store! I want to order " + name + " for Rs. " + price + ". Please guide me.";
+            let msg = "Hi! I want to order " + name + " for Rs. " + price + ". Is it available?";
             window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
         }
     </script>
