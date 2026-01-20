@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Premium Store</title>
+    <title>Elite Premium Store | Online Shopping</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>ELITE PREMIUM STORE</h1>
-        <p>Best Quality, Best Prices</p>
+        <div class="logo">ELITE STORE</div>
+        <p>Premium Products at Unbeatable Prices</p>
     </header>
+
+    <section class="banner">
+        <h2>Summer Sale - 50% OFF</h2>
+        <p>Aapka pasandida saman, ab aapki pohanch mein!</p>
+    </section>
 
     <div class="container">
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Watch">
-            <h3>Premium Smart Watch</h3>
-            <p class="price">Rs. 4,500</p>
-            <button>Buy Now</button>
-        </div>
-    </div        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="Mobile">
-            <h3>Elite Smartphone</h3>
-            <p class="price">Rs. 45,000</p>
-            <button>Buy Now</button>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Watch">
+            <h3>Luxury Watch</h3>
+            <p class="price">Rs. 2,999</p>
+            <button onclick="orderNow('Luxury Watch', '2,999')">Order on WhatsApp</button>
         </div>
 
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Headphones">
-            <h3>Premium Headphones</h3>
-            <p class="price">Rs. 8,500</p>
-            <button>Buy Now</button>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones">
+            <h3>Elite Headphones</h3>
+            <p class="price">Rs. 4,500</p>
+            <button onclick="orderNow('Elite Headphones', '4,500')">Order on WhatsApp</button>
         </div>
 
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Shoes">
+            <h3>Sport Shoes</h3>
+            <p class="price">Rs. 3,200</p>
+            <button onclick="orderNow('Sport Shoes', '3,200')">Order on WhatsApp</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1526170315870-ef68460d2876?w=400" alt="Camera">
+            <h3>Digital Camera</h3>
+            <p class="price">Rs. 15,000</p>
+            <button onclick="orderNow('Digital Camera', '15,000')">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Elite Premium Store - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function orderNow(name, price) {
+            let phone = "923XXXXXXXXX"; // <-- Apna WhatsApp number yahan likhein
+            let msg = "Hi! I want to buy " + name + " for Rs. " + price + ". Is it available?";
+            window.open("https://wa.me/" + phone + "?text=" + encodeURI(msg));
+        }
+    </script>
 </body>
 </html>
