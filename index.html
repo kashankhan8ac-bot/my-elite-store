@@ -9,25 +9,19 @@
         :root { --gold: #d4af37; --black: #111; --white: #fff; --green: #25d366; }
         body { font-family: 'Poppins', sans-serif; margin: 0; background: #f0f2f5; color: #333; scroll-behavior: smooth; }
         
-        /* Top Banner */
         .top-banner { background: var(--black); color: var(--gold); text-align: center; padding: 10px; font-size: 12px; font-weight: bold; letter-spacing: 1px; border-bottom: 1px solid var(--gold); }
 
-        /* Header & Search */
         .main-header { background: var(--white); padding: 15px 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo { font-size: 24px; font-weight: 900; color: var(--black); text-decoration: none; border-bottom: 3px solid var(--gold); }
         .search-container { width: 100%; max-width: 500px; position: relative; }
         .search-container input { width: 100%; padding: 10px 15px; border-radius: 25px; border: 1px solid #ddd; outline: none; }
         .search-container i { position: absolute; right: 15px; top: 12px; color: #888; }
 
-        /* Menu Dashboard */
         .nav-menu { display: flex; gap: 15px; overflow-x: auto; width: 100%; padding: 10px 0; justify-content: center; background: #f8f9fa; }
         .nav-menu a { text-decoration: none; color: #555; font-size: 13px; font-weight: 600; white-space: nowrap; display: flex; align-items: center; gap: 5px; }
-        .nav-menu a:hover { color: var(--gold); }
 
-        /* Hero Section */
         header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000'); background-size: cover; padding: 60px 20px; text-align: center; color: white; margin-bottom: 30px; }
 
-        /* Products Grid */
         .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 10px; gap: 15px; }
         .product-card { background: var(--white); border-radius: 12px; overflow: hidden; width: 45%; max-width: 250px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); position: relative; }
         .product-card img { width: 100%; height: 180px; object-fit: cover; }
@@ -36,15 +30,11 @@
         .price { color: var(--green); font-weight: 800; font-size: 1.1rem; }
         .buy-btn { background: var(--black); color: var(--gold); border: none; width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; }
 
-        /* Review Section */
         .reviews { padding: 40px 20px; background: var(--white); text-align: center; }
         .review-card { background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 10px; display: inline-block; width: 280px; text-align: left; border-left: 5px solid var(--gold); }
         .stars { color: #f1c40f; margin-bottom: 10px; }
 
-        /* Footer */
         footer { background: var(--black); color: white; padding: 40px 20px; text-align: center; }
-        .footer-links a { color: #bbb; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        
         .wa-float { position: fixed; bottom: 20px; right: 20px; background: var(--green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 10000; }
     </style>
 </head>
@@ -76,14 +66,19 @@
     <section id="products" class="container">
         <script>
             const products = [
-                {n: "Smart Watch Ultra Z", p: "3,500", i: "https://images.unsplash.com/photo-1546868891-d5b02b903115?w=500"},
+                {n: "Series 9 Ultra Watch", p: "3,500", i: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500"},
                 {n: "M10 Wireless Earbuds", p: "1,800", i: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500"},
-                {n: "Luxury Men's Wallet", p: "1,200", i: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500"},
+                {n: "Leather Men's Wallet", p: "1,200", i: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500"},
                 {n: "Magnetic Sunglasses", p: "1,500", i: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"},
-                {n: "Mini Portable Fan", p: "950", i: "https://images.unsplash.com/photo-1591147139235-96423d0d3c32?w=500"},
+                {n: "Portable Mini Fan", p: "950", i: "https://images.unsplash.com/photo-1591147139235-96423d0d3c32?w=500"},
                 {n: "Gaming Mouse RGB", p: "1,400", i: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500"},
-                {n: "Electric Lint Remover", p: "1,100", i: "https://images.unsplash.com/photo-1626015565152-40114009772c?w=500"},
-                {n: "LED Desk Lamp", p: "2,200", i: "https://images.unsplash.com/photo-1507473884658-c4a3942d3acf?w=500"}
+                {n: "Professional Hair Trimmer", p: "2,500", i: "https://images.unsplash.com/photo-1621605815844-8355ad506810?w=500"},
+                {n: "LED Crystal Lamp", p: "1,900", i: "https://images.unsplash.com/photo-1507473884658-c4a3942d3acf?w=500"},
+                {n: "Anti-Theft Laptop Bag", p: "3,200", i: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+                {n: "Luxury Men's Perfume", p: "2,800", i: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"},
+                {n: "Bluetooth Party Speaker", p: "4,500", i: "https://images.unsplash.com/photo-1608351489262-856be29e9c60?w=500"},
+                {n: "Smart Android Phone", p: "45,000", i: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"},
+                {n: "Air Jordan Sneakers", p: "5,500", i: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"}
             ];
 
             products.forEach(item => {
@@ -105,26 +100,23 @@
         <h2>Customer Reviews</h2>
         <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Product ki quality bahut achi hai, bilkul jaisa dikhaya waisa hi mila."</p>
+            <p>"Product ki quality bahut achi hai, fast delivery!"</p>
             <strong>- Ali Khan (Lahore)</strong>
         </div>
         <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Free delivery aur fast service. Recommended!"</p>
+            <p>"Same as shown in pictures. Great store."</p>
             <strong>- Sara Ahmed (Karachi)</strong>
         </div>
     </section>
 
     <section id="about" style="padding:40px 20px; text-align:center; background:#eee;">
         <h2>About Us</h2>
-        <p>Kashan Store is your one-stop shop for high-quality gadgets and lifestyle products in Pakistan. We ensure 100% customer satisfaction.</p>
+        <p>Kashan Store offers premium gadgets at affordable prices with 24/7 customer support.</p>
     </section>
 
     <footer>
         <p>&copy; 2024 Kashan Store. All Rights Reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </div>
     </footer>
 
     <a href="https://wa.me/923109543841" class="wa-float">
